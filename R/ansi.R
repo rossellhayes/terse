@@ -21,7 +21,7 @@ reset <- "\033[39m\033[49m"
 #' @importFrom grDevices col2rgb
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 col2bg <- function(rcolour) {
-  if (is.null(rcolour) | is.na(rcolour)) {return('')}
+  if (is.null(rcolour) || is.na(rcolour)) {return('')}
   code <- col2code(rcolour)
   paste0("\033[48;5;", code, "m")
 }
@@ -31,7 +31,7 @@ col2bg <- function(rcolour) {
 #' @rdname col2bg
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 col2fg <- function(rcolour) {
-  if (is.null(rcolour) | is.na(rcolour)) {return('')}
+  if (is.null(rcolour) || is.na(rcolour)) {return('')}
   code <- col2code(rcolour)
   paste0("\033[38;5;", code, "m")
 }
