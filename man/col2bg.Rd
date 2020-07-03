@@ -13,11 +13,11 @@ col2fg(rcolour)
 col2code(rcolour)
 }
 \arguments{
-\item{rcolour}{any R colour e.g. 'red', '#445566'}
+\item{rcolour}{any R colour (e.g. 'red', '#445566') or NA}
 }
 \value{
 ANSI escape string for the given colour as a foreground or background
-        colour
+        colour. If `rcolour` is NULL or NA, returns an empty string.
 }
 \description{
 Ref: \url{https://en.wikipedia.org/wiki/ANSI_escape_code#8-bit}

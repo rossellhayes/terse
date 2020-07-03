@@ -90,7 +90,7 @@ or a numeric vector the same length as x}
 
 \item{config}{named list of user configuration options
 \itemize{
-\item{\code{ansi       } - Use ANSI to colour output. default: TRUE}
+\item{\code{ansi       } - Use ANSI to colour output. ANSI will be disabled for colours set to NA. default: TRUE}
 \item{\code{soft       } - non-highlight colour. default: grey40}
 \item{\code{gsep       } - separator for vector output. default: ','}
 \item{\code{colour_nth } - colour for every nth vector element. default: blue4}

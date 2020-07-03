@@ -13,15 +13,15 @@ reset <- "\033[39m\033[49m"
 #' If all the RGB colour components are equal then the colour is matched to one
 #' of 24 grey levels, other wise it is converted to one of 216 standard colours.
 #'
-#' @param rcolour any R colour e.g. 'red', '#445566'
+#' @param rcolour any R colour (e.g. 'red', '#445566') or NA
 #'
 #' @return ANSI escape string for the given colour as a foreground or background
-#'         colour
+#'         colour. If `rcolour` is NULL or NA, returns an empty string.
 #'
 #' @importFrom grDevices col2rgb
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 col2bg <- function(rcolour) {
-  if (is.null(rcolour)) {return('')}
+  if (is.null(rcolour) | is.na(rcolour)) {return('')}
   code <- col2code(rcolour)
   paste0("\033[48;5;", code, "m")
 }
@@ -31,7 +31,7 @@ col2bg <- function(rcolour) {
 #' @rdname col2bg
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 col2fg <- function(rcolour) {
-  if (is.null(rcolour)) {return('')}
+  if (is.null(rcolour) | is.na(rcolour)) {return('')}
   code <- col2code(rcolour)
   paste0("\033[38;5;", code, "m")
 }
